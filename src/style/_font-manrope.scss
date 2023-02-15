@@ -1,0 +1,17 @@
+$weights:
+  (
+    300,
+    400,
+    500,
+    700
+  );
+
+@each $weight in $weights {
+  @font-face {
+    font-family: "Manrope";
+    font-style: normal;
+    font-weight: $weight;
+    src: url("../fonts/manrope/manrope-v13-latin-#{$weight}.woff");
+    font-display: swap;
+  }
+}

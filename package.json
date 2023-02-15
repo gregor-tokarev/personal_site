@@ -7,7 +7,7 @@
     "build": "gulp build --production",
     "dev": "gulp watch",
     "lint": "gulp lint",
-    "setup:dev": "git flow init && npm install && npm run dev",
+    "setup:dev": "npm install && npm run dev",
     "setup:prod": "npm install && npm run build --production"
   },
   "keywords": [],
@@ -52,15 +52,12 @@
     "gulp-zip": "^5.0.1",
     "husky": "^4.2.1",
     "lint-staged": "^10.0.3",
+    "postcss": "^8.2.15",
     "sass": "^1.58.1",
     "stylelint": "^13.3.3",
     "stylelint-config-recess-order": "^2.0.4",
     "stylelint-config-standard": "^20.0.0",
     "stylelint-scss": "^3.17.2",
-    "stylelint-selector-bem-pattern": "^2.1.0",
-    "uglifyjs-webpack-plugin": "^2.2.0",
-    "webpack": "^4.44.2",
-    "webpack-stream": "^5.2.1",
     "yargs": "^15.3.1"
   },
   "husky": {

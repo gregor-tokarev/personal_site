@@ -99,14 +99,7 @@ function watchDevelopment() {
 function styleLinter() {
     return src(path.src.style)
         .pipe(plumber())
-        .pipe(styleLint({
-            reporters: [
-                {
-                    formatter: 'string',
-                    console: true
-                }
-            ]
-        }));
+        .pipe(styleLint());
 }
 
 function scriptLinter() {
@@ -311,7 +304,7 @@ if (!production) {
         fontsProduction,
         faviconsProduction
     );
-    
+
     exports.lint = series(styleLinter, scriptLinter);
     exports.build = build;
 }

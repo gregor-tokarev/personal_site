@@ -1,0 +1,99 @@
+
+@mixin display-1 {
+  font-family: 'Manrope', sans-serif;
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 66px;
+}
+
+.display-1 {
+  @include display-1;
+}
+
+@mixin title-1 {
+  font-family: 'Manrope', sans-serif;
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 49px;
+}
+
+.title-1 {
+  @include title-1;
+}
+
+@mixin title-2 {
+  font-family: 'Manrope', sans-serif;
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 38px;
+}
+
+.title-2 {
+  @include title-2;
+}
+
+@mixin title-3 {
+  font-family: 'Manrope', sans-serif;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 33px;
+}
+
+.title-3 {
+  @include title-3;
+}
+
+@mixin body-1 {
+  font-family: 'Manrope', sans-serif;
+  font-size: 32px;
+  font-weight: 400;
+  line-height: 44px;
+}
+
+.body-1 {
+  @include body-1;
+}
+
+@mixin body-2 {
+  font-family: 'Manrope', sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 27px;
+}
+
+.body-2 {
+  @include body-2;
+}
+
+@mixin body-3 {
+  font-family: 'Manrope', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 19px;
+}
+
+.body-3 {
+  @include body-3;
+}
+
+@mixin label-2 {
+  font-family: 'Manrope', sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 22px;
+}
+
+.label-2 {
+  @include label-2;
+}
+
+@mixin label-3 {
+  font-family: 'Manrope', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 15px;
+}
+
+.label-3 {
+  @include label-3;
+}
