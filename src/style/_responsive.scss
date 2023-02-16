@@ -1,0 +1,9 @@
+$container-sm: 680px;
+$mobile-x-space: 15px;
+$max-container-width: 1800px;
+
+@mixin apply-desktop() {
+  @media screen and (min-width: #{$container-sm}) {
+    @content;
+  }
+}

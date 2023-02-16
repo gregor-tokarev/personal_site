@@ -182,7 +182,6 @@ function scriptDevelopment() {
         .pipe(plumber())
         .pipe(sourceMap.init())
         .pipe(esbuild({
-            outfile: path.build.script,
             bundle: true
         }))
         .pipe(sourceMap.write('.'))
@@ -193,7 +192,6 @@ function scriptDevelopment() {
 function scriptProduction() {
     return src(path.src.script)
         .pipe(esbuild({
-            outfile: path.build.script,
             bundle: true,
             minify: true
         }))

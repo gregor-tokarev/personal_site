@@ -1,0 +1,134 @@
+@use "src/style/responsive";
+@use "src/style/typography";
+
+.hero {
+  position: relative;
+  height: 80vh;
+  background: url("../../images/hero/me.png") center/cover;
+
+  &__inner {
+    position: relative;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    max-width: responsive.$max-container-width;
+    height: 100%;
+    padding: responsive.$mobile-x-space 15px;
+    margin: 0 auto;
+
+    @include responsive.apply-desktop {
+      padding: 30px 50px;
+    }
+  }
+
+  &__overlay {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: var(--dark);
+    opacity: 0.95;
+  }
+}
+
+.quotes {
+  &__label {
+    margin-bottom: 5px;
+    color: var(--gray-300);
+  }
+
+  &__content {
+    position: relative;
+    max-width: 245px;
+    min-height: 81px;
+    color: var(--accent);
+    transition: color 0.2s;
+
+    @include typography.body-3;
+
+    &:hover {
+      color: var(--accent-dark);
+    }
+
+    @include responsive.apply-desktop {
+      max-width: 360px;
+
+      @include typography.body-2;
+    }
+
+    p {
+      position: absolute;
+      transition: opacity 1s;
+    }
+  }
+}
+
+.hero-nav {
+  &__list {
+    padding: 0;
+    list-style-type: none;
+  }
+
+  &__item {
+    display: block;
+    width: fit-content;
+    cursor: pointer;
+
+    &:not(:last-child) {
+      margin-bottom: 16px;
+    }
+  }
+
+  &__link {
+    position: relative;
+    color: var(--white);
+    transition: color 0.2s;
+
+    &::after {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 1px;
+      content: '';
+      background-color: var(--white);
+      transition: all 0.2s;
+      transform: scaleX(0);
+      transform-origin: left;
+    }
+
+    &:hover {
+      color: var(--gray-200);
+
+      &::after {
+        background-color: var(--gray-200);
+        transform: scaleX(1);
+      }
+    }
+  }
+}
+
+.hero-greet {
+  &__name {
+    color: var(--gray-400);
+
+    @include typography.title-2;
+
+    @include responsive.apply-desktop {
+      @include typography.display-1;
+    }
+  }
+
+  &__job {
+    color: var(--white);
+
+    @include typography.title-2;
+
+    @include responsive.apply-desktop {
+      @include typography.display-1;
+    }
+  }
+}
