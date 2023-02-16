@@ -26,6 +26,7 @@
 
       @include responsive.apply-desktop {
         margin-right: 70px;
+        margin-bottom: 0;
       }
     }
   }
