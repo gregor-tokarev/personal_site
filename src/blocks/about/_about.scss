@@ -1,0 +1,30 @@
+@use "src/style/responsive";
+@use "src/style/typography";
+
+.about {
+  padding: 30px responsive.$mobile-x-space 0;
+  // custom font
+  font-family: "Manrope", sans-serif;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 160%;
+  color: var(--gray-300);
+  letter-spacing: 0.015em;
+
+  @include responsive.apply-desktop {
+    max-width: 1070px;
+    margin: 0 auto;
+    font-size: 36px;
+    font-weight: 700;
+  }
+
+  p {
+    &:not(:last-child) {
+      margin-bottom: 60px;
+
+      @include responsive.apply-desktop {
+        margin-bottom: 90px;
+      }
+    }
+  }
+}
