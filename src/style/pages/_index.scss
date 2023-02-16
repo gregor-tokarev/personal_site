@@ -1,0 +1,15 @@
+@use "src/style/responsive";
+
+.main {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+
+  &__bottom {
+    margin-top: 180px;
+
+    @include responsive.apply-desktop {
+      margin-top: 260px;
+    }
+  }
+}
