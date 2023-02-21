@@ -1,0 +1,63 @@
+@use "src/style/typography";
+@use "src/style/responsive";
+
+$project-screen-height: 100vh;
+$project-screen-spacer: 15px;
+
+.projects {
+  position: relative;
+  margin-top: 110px;
+
+  &__inner {
+    position: relative;
+    height: 100vh;
+  }
+
+  @include responsive.apply-desktop {
+    margin-top: 240px;
+  }
+}
+
+.project {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: calc(#{$project-screen-height} - #{$project-screen-spacer});
+  margin: 0 responsive.$mobile-x-space;
+
+  &__wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: calc(#{$project-screen-height} - #{$project-screen-spacer * 2});
+    color: var(--white);
+  }
+
+  @for $i from 1 through 3 {
+    &:nth-child(#{$i}) {
+      z-index: $i;
+    }
+  }
+
+  @include typography.display-1;
+
+  &--1 .project__wrapper {
+    background-color: var(--dark);
+  }
+
+  &--2 .project__wrapper {
+    background-color: red;
+  }
+
+  &--3 .project__wrapper {
+    background-color: green;
+  }
+
+  &__spacer {
+    width: 100%;
+    height: $project-screen-spacer;
+    background-color: var(--white);
+  }
+}

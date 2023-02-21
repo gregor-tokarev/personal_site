@@ -10,8 +10,11 @@
 </head>
 <body>
 <main class="main">
-    <%- include("blocks/hero/hero.ejs")%>
-    <%- include("blocks/about/about.ejs")%>
+    <div class="main__content">
+        <%- include("blocks/hero/hero.ejs")%>
+        <%- include("blocks/about/about.ejs")%>
+        <%- include("blocks/projects/list.ejs")%>
+    </div>
     <div class="main__bottom">
         <%- include("blocks/footer/footer.ejs")%>
     </div>

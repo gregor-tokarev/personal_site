@@ -1,4 +1,5 @@
-@import "about/about";
-@import "action_button/action_button";
-@import "footer/footer";
-@import "hero/hero";
+@forward "about/about";
+@forward "action_button/action_button";
+@forward "footer/footer";
+@forward "hero/hero";
+@forward "projects/projects";

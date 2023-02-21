@@ -12,8 +12,6 @@ setInterval(() => {
 
     quotes.item(currentIdx).style.opacity = '1'
     quotes.item(currentIdx).style.zIndex = 1
-    // quotes.forEach(quote => quote.setAttribute('hidden', true))
-    // quotes.item(currentIdx).removeAttribute('hidden')
 
     currentIdx++
 
