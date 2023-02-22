@@ -16,8 +16,7 @@ setTimeout(() => {
                     trigger: item,
                     start: 'top-=200px bottom',
                     end: 'bottom top',
-                    scrub: true,
-                    markers: true
+                    scrub: true
                 }
             }
         );
