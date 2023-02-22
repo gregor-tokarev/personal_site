@@ -14,9 +14,10 @@ setTimeout(() => {
                 ease: 'linear',
                 scrollTrigger: {
                     trigger: item,
-                    start: `top-=100px bottom-=${item.offsetHeight * 5}px`,
-                    end: `bottom+=100px top+=${item.offsetHeight * 5}px`,
-                    scrub: true
+                    start: 'top-=200px bottom',
+                    end: 'bottom top',
+                    scrub: true,
+                    markers: true
                 }
             }
         );
