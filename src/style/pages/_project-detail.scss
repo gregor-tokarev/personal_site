@@ -1,0 +1,151 @@
+@use "src/style/responsive";
+@use "src/style/typography";
+
+.project {
+  padding-top: 30px;
+
+  @include responsive.apply-desktop {
+    padding-top: 70px;
+  }
+
+  &__inner {
+    max-width: 1180px;
+    margin: 0 responsive.$mobile-x-space;
+
+    @include responsive.apply-desktop {
+      margin: 0 auto;
+    }
+  }
+
+  &__goback {
+    margin-bottom: 20px;
+  }
+
+  &__body {
+    @include responsive.apply-desktop {
+      display: flex;
+      align-items: flex-start;
+    }
+  }
+
+  &__aside {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    @include responsive.apply-desktop {
+      position: sticky;
+      top: 10px;
+      flex-basis: 32%;
+      min-width: 380px;
+      margin-left: 25px;
+    }
+  }
+}
+
+.goback {
+  display: flex;
+  align-items: center;
+  padding: 6px 15px;
+  background-color: var(--gray-100);
+  border-radius: 10px;
+
+  &__arrow {
+    height: fit-content;
+    margin-right: 10px;
+  }
+}
+
+.project-content {
+  p {
+    color: var(--gray-400);
+
+    @include typography.body-3;
+
+    @include responsive.apply-desktop {
+      @include typography.body-2;
+    }
+  }
+}
+
+.project-aside {
+  padding: 20px 15px;
+  background-color: var(--gray-100);
+  border-radius: 10px;
+  transition: transform 0.2s;
+  transform: translateY(145px);
+
+  &--open {
+    transform: translateY(0);
+  }
+
+  @include responsive.apply-desktop {
+    padding: 25px 15px;
+  }
+
+  &__mobile-bar {
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    width: 65px;
+    height: 3px;
+    background-color: var(--gray-300);
+    transform: translateX(-50%);
+  }
+
+  &__title {
+    margin-bottom: 15px;
+
+    @include typography.body-2;
+
+    @include responsive.apply-desktop {
+      @include typography.title-2;
+    }
+  }
+
+  &__tr {
+    display: flex;
+    align-items: flex-start;
+
+    &:not(:last-child) {
+      padding-bottom: 10px;
+      margin-bottom: 10px;
+      border-bottom: 1px solid var(--gray-200);
+    }
+  }
+
+  &__label {
+    min-width: 108px;
+    padding-top: 4px;
+    color: var(--gray-400);
+  }
+
+  &__repo {
+    display: flex;
+    align-items: center;
+    color: var(--gray-400);
+    text-decoration: underline;
+  }
+
+  &__github-ico {
+    width: 30px;
+    height: 30px;
+    margin-right: 4px;
+  }
+
+  &__skill-list {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0;
+    list-style-type: none;
+  }
+
+  &__skill {
+    padding: 3px 7px;
+    margin: 0 4px 4px 0;
+    color: var(--dark);
+    background-color: var(--gray-200);
+    border-radius: 20px;
+  }
+}

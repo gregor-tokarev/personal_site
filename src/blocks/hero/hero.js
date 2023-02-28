@@ -1,21 +1,24 @@
 const quoteContent = document.querySelector('[data-hero-quote]')
-const quotes = quoteContent.querySelectorAll('p')
-const quotesCount = quotes.length
 
-let currentIdx = 0
+if (quoteContent) {
+    const quotes = quoteContent.querySelectorAll('p')
+    const quotesCount = quotes.length
 
-setInterval(() => {
-    quotes.forEach(q => {
-        q.style.opacity = '0';
-        q.style.zIndex = 0
-    })
+    let currentIdx = 0
 
-    quotes.item(currentIdx).style.opacity = '1'
-    quotes.item(currentIdx).style.zIndex = 1
+    setInterval(() => {
+        quotes.forEach(q => {
+            q.style.opacity = '0';
+            q.style.zIndex = 0
+        })
 
-    currentIdx++
+        quotes.item(currentIdx).style.opacity = '1'
+        quotes.item(currentIdx).style.zIndex = 1
 
-    if (currentIdx > quotesCount - 1) {
-        currentIdx = 0
-    }
-}, 5000)
+        currentIdx++
+
+        if (currentIdx > quotesCount - 1) {
+            currentIdx = 0
+        }
+    }, 5000)
+}

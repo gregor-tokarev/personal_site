@@ -45,7 +45,6 @@
     "gulp-sass": "^5.1.0",
     "gulp-sourcemaps": "^2.6.5",
     "gulp-stylelint": "^13.0.0",
-    "gulp-uncss": "^1.0.6",
     "gulp-webp": "^4.0.1",
     "gulp-webp-html": "^1.0.2",
     "gulp-webpcss": "^1.1.1",
@@ -78,6 +77,7 @@
     "@babel/polyfill": "^7.12.1",
     "gsap": "^3.11.4",
     "imagesloaded": "^4.1.4",
-    "smooth-scrollbar": "^8.8.1"
+    "smooth-scrollbar": "^8.8.1",
+    "swiped-events": "^1.1.7"
   }
 }

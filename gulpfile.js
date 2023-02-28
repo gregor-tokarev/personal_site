@@ -11,7 +11,6 @@ const scss = require('gulp-sass')(require('sass'));
 const styleMin = require('gulp-csso');
 const autoprefixer = require('gulp-autoprefixer');
 const styleMediaGroup = require('gulp-group-css-media-queries');
-const unuseStyle = require('gulp-uncss');
 const styleWebp = require('gulp-webpcss');
 const styleLint = require('gulp-stylelint');
 
@@ -47,31 +46,31 @@ const projectFolder = 'dist';
 // Path settings
 const path = {
     build: {
-        html: `${ projectFolder }/`,
-        style: `${ projectFolder }/style/`,
-        script: `${ projectFolder }/js/`,
-        img: `${ projectFolder }/images/`,
-        icons: `${ projectFolder }/images/icons/`,
-        favicons: `${ projectFolder }/images/favicons/`,
-        fonts: `${ projectFolder }/fonts/`
+        html: `${projectFolder}/`,
+        style: `${projectFolder}/style/`,
+        script: `${projectFolder}/js/`,
+        img: `${projectFolder}/images/`,
+        icons: `${projectFolder}/images/icons/`,
+        favicons: `${projectFolder}/images/favicons/`,
+        fonts: `${projectFolder}/fonts/`
     },
     src: {
-        html: `${ sourceFolder }/*.ejs`,
-        style: `${ sourceFolder }/style/*.scss`,
-        script: `${ sourceFolder }/js/index.js`,
-        img: `${ sourceFolder }/images/**/*.{jpeg,png,gif,svg,webp}`,
-        icons: `${ sourceFolder }/images/icons/*.svg`,
-        favicons: `${ sourceFolder }/favicon.png`,
-        fonts: `${ sourceFolder }/fonts/**/*.*`
+        html: [`${sourceFolder}/pages/**/*.ejs`, `${sourceFolder}/pages/index.ejs`],
+        style: `${sourceFolder}/style/*.scss`,
+        script: `${sourceFolder}/js/index.js`,
+        img: `${sourceFolder}/images/**/*.{jpeg,png,gif,svg,webp}`,
+        icons: `${sourceFolder}/images/icons/*.svg`,
+        favicons: `${sourceFolder}/favicon.png`,
+        fonts: `${sourceFolder}/fonts/**/*.*`
     },
     watch: {
-        html: `${ sourceFolder }/*.ejs`,
-        blocks: `${ sourceFolder }/blocks/**/*.*`,
-        style: `${ sourceFolder }/style/**/*.scss`,
-        script: `${ sourceFolder }/js/**/*.js`,
-        img: `${ sourceFolder }/images/**/*.{jpeg,png,gif,svg,webp}`
+        html: `${sourceFolder}/pages/**/*.ejs`,
+        blocks: `${sourceFolder}/blocks/**/*.*`,
+        style: `${sourceFolder}/style/**/*.scss`,
+        script: `${sourceFolder}/js/**/*.js`,
+        img: `${sourceFolder}/images/**/*.{jpeg,png,gif,svg,webp}`
     },
-    clean: [`./${ projectFolder }/`, './site.zip']
+    clean: [`./${projectFolder}/`, './site.zip']
 };
 
 function clean() {
@@ -81,7 +80,7 @@ function clean() {
 function browserSyncDevelopment() {
     browserSync.init({
         server: {
-            baseDir: `./${ projectFolder }/`
+            baseDir: `./${projectFolder}/`
         },
         port: 4000,
         notify: false
@@ -112,7 +111,6 @@ function htmlDevelopment() {
     return src(path.src.html)
         .pipe(plumber())
         .pipe(changed(path.build.html, { extension: '.ejs' }))
-        .pipe(replace(/>\s<\/head>/i, '><%- include("../.gt_layout_template/linkicon.ejs") %></head>'))
         .pipe(ejs())
         .pipe(rename({ extname: '.html' }))
         .pipe(replace(/\.(scss|sass)/g, '.css'))
@@ -124,7 +122,6 @@ function htmlDevelopment() {
 
 function htmlProduction() {
     return src(path.src.html)
-        .pipe(replace(/>\s<\/head>/i, '><%- include("../.gt_layout_template/linkicon.ejs") %></head>'))
         .pipe(ejs())
         .pipe(rename({ extname: '.html' }))
         .pipe(replace(/\.(scss|sass)/g, '.css'))
@@ -166,10 +163,6 @@ function styleProduction() {
             grid: true
         }))
         .pipe(styleMin())
-        .pipe(unuseStyle({
-            html: ['./dist/*.html'],
-            ignore: [/.show/, /.hidden/, /.visible/, /.finished/, /.close/, /.active/, /.open/]
-        }))
         .pipe(rename({
             suffix: '.min'
         }))
