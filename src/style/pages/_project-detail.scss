@@ -52,14 +52,26 @@
   border-radius: 10px;
 
   &__arrow {
-    height: fit-content;
+    height: 32px;
     margin-right: 10px;
   }
 }
 
 .project-content {
+  &__gallery {
+    margin-bottom: 25px;
+
+    @include responsive.apply-desktop {
+      margin-bottom: 20px;
+    }
+  }
+
   p {
     color: var(--gray-400);
+
+    &:not(:last-child) {
+      margin-bottom: 30px;
+    }
 
     @include typography.body-3;
 
@@ -69,19 +81,42 @@
   }
 }
 
+.project-gallery {
+  &__slides {
+    display: flex;
+    padding: 0;
+    overflow-x: auto;
+    list-style-type: none;
+    cursor: pointer;
+  }
+
+  &__slide {
+    flex-basis: 90%;
+    flex-shrink: 0;
+
+    &:not(:last-child) {
+      margin-right: 5%;
+    }
+  }
+}
+
 .project-aside {
-  padding: 20px 15px;
+  padding: 25px 15px;
   background-color: var(--gray-100);
   border-radius: 10px;
   transition: transform 0.2s;
   transform: translateY(145px);
+
+  @include responsive.apply-desktop {
+    transform: translateY(0);
+  }
 
   &--open {
     transform: translateY(0);
   }
 
   @include responsive.apply-desktop {
-    padding: 25px 15px;
+    padding: 20px 15px;
   }
 
   &__mobile-bar {
@@ -92,6 +127,10 @@
     height: 3px;
     background-color: var(--gray-300);
     transform: translateX(-50%);
+
+    @include responsive.apply-desktop {
+      display: none;
+    }
   }
 
   &__title {
@@ -147,5 +186,48 @@
     color: var(--dark);
     background-color: var(--gray-200);
     border-radius: 20px;
+  }
+}
+
+.project-modal {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: none;
+
+  &--open {
+    display: block;
+  }
+
+  &__overlay {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    cursor: pointer;
+    background-color: var(--white);
+    opacity: 0.5;
+  }
+
+  &__img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 10;
+    max-width: 90%;
+    transform: translate(-50%, -50%);
+  }
+
+  &__cross {
+    &::before,
+    &::after {
+      width: 32px;
+      height: 3px;
+      content: '';
+      background-color: var(--gray-400);
+    }
   }
 }

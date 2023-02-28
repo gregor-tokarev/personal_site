@@ -57,7 +57,7 @@ const path = {
     src: {
         html: [`${sourceFolder}/pages/**/*.ejs`, `${sourceFolder}/pages/index.ejs`],
         style: `${sourceFolder}/style/*.scss`,
-        script: `${sourceFolder}/js/index.js`,
+        script: `${sourceFolder}/js/*.js`,
         img: `${sourceFolder}/images/**/*.{jpeg,png,gif,svg,webp}`,
         icons: `${sourceFolder}/images/icons/*.svg`,
         favicons: `${sourceFolder}/favicon.png`,

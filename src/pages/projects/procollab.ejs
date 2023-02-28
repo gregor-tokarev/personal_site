@@ -18,6 +18,19 @@
         </a>
         <div class="project__body">
             <article class="project__content project-content">
+                <div class="project-gallery project-content__gallery">
+                    <ul class="project-gallery__slides">
+                        <li class="project-gallery__slide">
+                            <img src="/images/procollab/profile.png" alt="profile">
+                        </li>
+                        <li class="project-gallery__slide">
+                            <img src="/images/procollab/profile.png" alt="profile">
+                        </li>
+                        <li class="project-gallery__slide">
+                            <img src="/images/procollab/profile.png" alt="profile">
+                        </li>
+                    </ul>
+                </div>
                 <p>
                     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci animi culpa cumque illo itaque
                     libero minima nemo odio quas qui, recusandae sed ullam vel voluptates voluptatibus! Dolore in saepe
@@ -62,7 +75,7 @@
                     <div class="project-aside__tr">
                         <div class="project-aside__label label-2">Repository:</div>
                         <a class="project-aside__repo body-3" href="https://github.com/PROCOLLAB-github/procollab">
-                            <div class="project-aside__github-ico"><%- include("../../images/icons/github-30.svg")%></div>
+                            <div class="project-aside__github-ico"><%- include("../../images/icons/github-30.svg") %></div>
                             <span>PROCOLLAB-github/procollab</span>
                         </a>
                     </div>
@@ -80,7 +93,12 @@
             </aside>
         </div>
     </div>
+    <div class="project__modal project-modal">
+        <div class="project-modal__overlay"></div>
+        <div class="project-modal__cross"></div>
+        <img class="project-modal__img" src="/">
+    </div>
 </main>
-<script src="/js/index.js"></script>
+<script src="/js/project-page.js"></script>
 </body>
 </html>
