@@ -8,7 +8,9 @@ if (projectAside) {
     })
 
     projectAside.addEventListener('touchend', _ => {
-        document.body.style.overflowY = 'unset'
+        setTimeout(() => {
+            document.body.style.overflowY = 'unset'
+        }, 200)
     })
 
     projectAside.addEventListener('swiped-up', _ => {
