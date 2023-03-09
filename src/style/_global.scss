@@ -19,3 +19,8 @@ img {
   display: block;
   max-width: 100%;
 }
+
+::selection {
+  color: var(--dark);
+  background-color: var(--gray-200);
+}
