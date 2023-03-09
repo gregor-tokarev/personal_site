@@ -3,7 +3,12 @@
 
 .footer {
   padding: 31px;
+  margin-top: 180px;
   background-color: var(--dark);
+
+  @include responsive.apply-desktop {
+    margin-top: 260px;
+  }
 
   &__nav-list {
     display: flex;
