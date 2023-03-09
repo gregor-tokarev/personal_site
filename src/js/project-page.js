@@ -33,6 +33,8 @@ if (gallery) {
         const webpUrl = item.querySelector('source').getAttribute('srcset')
 
         item.addEventListener('click', _ => {
+            document.body.style.overflowY = 'hidden'
+
             modal.querySelector('img').setAttribute('src', imgUrl)
             modal.querySelector('source').setAttribute('srcset', webpUrl)
             modal.classList.add('project-modal--open')
@@ -40,6 +42,7 @@ if (gallery) {
     })
 
     modal.querySelector('.project-modal__overlay').addEventListener('click', _ => {
+        document.body.style.overflowY = 'unset'
         modal.classList.remove('project-modal--open')
     })
 }
