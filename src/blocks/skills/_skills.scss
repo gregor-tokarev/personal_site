@@ -1,12 +1,6 @@
 @use "src/style/responsive";
 
 .skills {
-  &__title {
-    @include responsive.apply-desktop {
-      margin-bottom: 60px;
-    }
-  }
-
   &__list {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
