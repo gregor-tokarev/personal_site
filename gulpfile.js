@@ -124,12 +124,12 @@ function htmlProduction() {
     return src(path.src.html)
         .pipe(ejs())
         .pipe(rename({ extname: '.html' }))
-        .pipe(replace(/\.(scss|sass)/g, '.min.css'))
+        .pipe(replace(/\.(scss|sass)/g, '.css'))
         .pipe(replace(/(\.\.\/)+/g, ''))
         .pipe(htmlWebp())
         .pipe(htmlMin({ collapseWhitespace: true }))
-        .pipe(replace('.css', '.css'))
-        .pipe(replace('.js', '.js'))
+        .pipe(replace('.css', '.min.css'))
+        .pipe(replace('.js', '.min.js'))
         .pipe(dest(path.build.html));
 }
 
