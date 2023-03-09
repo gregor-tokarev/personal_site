@@ -1,12 +1,6 @@
 @use "src/style/responsive";
 
 .skills {
-  padding-bottom: 180px;
-
-  @include responsive.apply-desktop {
-    padding-bottom: 260px;
-  }
-
   &__title {
     @include responsive.apply-desktop {
       margin-bottom: 60px;
