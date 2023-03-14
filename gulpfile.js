@@ -128,8 +128,6 @@ function htmlProduction() {
         .pipe(replace(/(\.\.\/)+/g, ''))
         .pipe(htmlWebp())
         .pipe(htmlMin({ collapseWhitespace: true }))
-        .pipe(replace('.css', '.min.css'))
-        .pipe(replace('.js', '.min.js'))
         .pipe(dest(path.build.html));
 }
 
@@ -163,9 +161,6 @@ function styleProduction() {
             grid: true
         }))
         .pipe(styleMin())
-        .pipe(rename({
-            suffix: '.min'
-        }))
         .pipe(styleWebp({}))
         .pipe(dest(path.build.style));
 }
@@ -187,9 +182,6 @@ function scriptProduction() {
         .pipe(esbuild({
             bundle: true,
             minify: true
-        }))
-        .pipe(rename({
-            suffix: '.min'
         }))
         .pipe(dest(path.build.script));
 }
