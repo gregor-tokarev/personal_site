@@ -1,0 +1,15 @@
+@use "src/style/responsive";
+
+.project--second {
+  background-color: var(--gray-400);
+
+  .project__img {
+    top: 105px;
+    right: 0;
+    left: 0;
+
+    @include responsive.apply-desktop {
+      top: 165px;
+    }
+  }
+}
