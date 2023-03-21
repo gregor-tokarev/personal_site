@@ -19,8 +19,7 @@ paragraphs.forEach(p => {
             trigger: p,
             start: `top-=${pageHeight / 3}px center`,
             end: `bottom-=${pageHeight / 3}px center`,
-            scrub: true,
-            markers: true
+            scrub: true
         }
     })
 

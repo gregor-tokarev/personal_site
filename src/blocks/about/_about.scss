@@ -26,5 +26,15 @@
         margin-bottom: 90px;
       }
     }
+
+    &.no-gap {
+      &:not(:last-child) {
+        margin-bottom: 0;
+
+        @include responsive.apply-desktop {
+          margin-bottom: 0;
+        }
+      }
+    }
   }
 }
