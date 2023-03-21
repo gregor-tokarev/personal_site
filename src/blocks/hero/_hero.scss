@@ -44,12 +44,13 @@
     max-width: 245px;
     min-height: 81px;
     color: var(--accent);
-    transition: color 0.2s;
+    cursor: pointer;
+    transition: transform 0.2s ease-out;
 
     @include typography.body-3;
 
     &:hover {
-      color: var(--accent-dark);
+      transform: scale(1.1);
     }
 
     @include responsive.apply-desktop {
@@ -60,7 +61,7 @@
 
     p {
       position: absolute;
-      transition: opacity 1s;
+      opacity: 0;
     }
   }
 }
