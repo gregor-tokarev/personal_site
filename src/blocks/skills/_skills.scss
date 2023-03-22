@@ -19,8 +19,19 @@
 // Skill card
 .skill {
   &__title {
+    display: flex;
+    align-items: center;
     margin-bottom: 12px;
     color: var(--gray-400);
+
+    svg {
+      width: 32px;
+      height: 32px;
+    }
+
+    span {
+      margin-left: 10px;
+    }
   }
 
   &__body {
