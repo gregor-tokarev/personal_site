@@ -6,24 +6,26 @@ gsap.registerPlugin(TextPlugin, ScrollTrigger)
 
 const aboutSection = document.querySelector('.about')
 
-const paragraphs = aboutSection.querySelectorAll('p')
+if (aboutSection) {
+    const paragraphs = aboutSection.querySelectorAll('p')
 
-const pageHeight = window.innerHeight;
+    const pageHeight = window.innerHeight;
 
-paragraphs.forEach(p => {
-    const text = p.textContent
-    gsap.set(p, { height: p.offsetHeight, text: '' });
+    paragraphs.forEach(p => {
+        const text = p.textContent
+        gsap.set(p, { height: p.offsetHeight, text: '' });
 
-    const tl = gsap.timeline({
-        scrollTrigger: {
-            trigger: p,
-            start: `top-=${pageHeight / 3}px center`,
-            end: `bottom-=${pageHeight / 3}px center`,
-            scrub: true
+        const tl = gsap.timeline({
+            scrollTrigger: {
+                trigger: p,
+                start: `top-=${pageHeight / 3}px center`,
+                end: `bottom-=${pageHeight / 3}px center`,
+                scrub: true
+            }
+        })
+
+        for (let i = 0; i < text.length; i++) {
+            tl.to(p, { duration: 10, text: text.slice(0, i + 1), ease: 'none' })
         }
     })
-
-    for (let i = 0; i < text.length; i++) {
-        tl.to(p, { duration: 10, text: text.slice(0, i + 1), ease: 'none' })
-    }
-})
+}

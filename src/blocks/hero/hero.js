@@ -10,11 +10,11 @@ if (quoteContent) {
     quotes.forEach((q, i) => tl
         .to(q, { opacity: 1, duration: 0.200 })
         .to(q, { opacity: 0 }, `+=${i * 5}`))
-}
 
-quoteContent.addEventListener('mouseenter', () => {
-    tl.pause()
-})
-quoteContent.addEventListener('mouseleave', () => {
-    tl.resume()
-})
+    quoteContent.addEventListener('mouseenter', () => {
+        tl.pause()
+    })
+    quoteContent.addEventListener('mouseleave', () => {
+        tl.resume()
+    })
+}
