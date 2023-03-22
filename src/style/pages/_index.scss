@@ -1,5 +1,9 @@
 @use "src/style/responsive";
 
+body {
+  overflow-x: hidden;
+}
+
 .main {
   display: flex;
   flex-direction: column;

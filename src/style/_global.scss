@@ -7,7 +7,6 @@
 body,
 html {
   scroll-behavior: smooth;
-  overflow-x: hidden;
 }
 
 a {
@@ -52,6 +51,22 @@ img {
     &::after {
       background-color: var(--gray-200);
       transform: scaleX(1);
+    }
+  }
+
+  &--on-light {
+    color: var(--gray-400);
+
+    &::after {
+      background-color: var(--gray-400);
+    }
+
+    &:hover {
+      color: var(--dark);
+
+      &::after {
+        background-color: var(--dark);
+      }
     }
   }
 }
