@@ -14,10 +14,6 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@babel/core": "^7.9.6",
-    "@babel/preset-env": "^7.9.6",
-    "babel-eslint": "^10.1.0",
-    "babel-loader": "^8.1.0",
     "browser-sync": "^2.26.7",
     "cwebp-bin": "^6.1.1",
     "del": "^5.1.0",
