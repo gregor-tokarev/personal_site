@@ -71,7 +71,6 @@
   },
   "dependencies": {
     "@babel/polyfill": "^7.12.1",
-    "gsap": "^3.11.4",
-    "imagesloaded": "^4.1.4"
+    "gsap": "^3.11.4"
   }
 }
