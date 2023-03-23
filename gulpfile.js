@@ -83,7 +83,8 @@ function browserSyncDevelopment() {
             baseDir: `./${projectFolder}/`
         },
         port: 4000,
-        notify: false
+        notify: false,
+        open: false
     });
 }
 
