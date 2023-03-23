@@ -2,11 +2,12 @@
 @use "src/style/responsive";
 
 .footer {
-  padding: 31px;
+  padding: 21px 0 100px;
   margin-top: 180px;
   background-color: var(--dark);
 
   @include responsive.apply-desktop {
+    padding: 31px 0;
     margin-top: 260px;
   }
 
