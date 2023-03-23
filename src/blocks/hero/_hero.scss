@@ -4,7 +4,7 @@
 .hero {
   position: relative;
   height: 80vh;
-  background: url("../../images/hero/me.png") center/cover;
+  background: url("../../images/hero/me.webp") center/cover;
 
   &__inner {
     position: relative;
@@ -103,8 +103,4 @@
       @include typography.display-1;
     }
   }
-}
-
-.webp .hero {
-  background: url("../../images/hero/me.webp") center/cover;
 }
