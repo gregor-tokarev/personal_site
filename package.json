@@ -72,8 +72,6 @@
   "dependencies": {
     "@babel/polyfill": "^7.12.1",
     "gsap": "^3.11.4",
-    "imagesloaded": "^4.1.4",
-    "smooth-scrollbar": "^8.8.1",
-    "swiped-events": "^1.1.7"
+    "imagesloaded": "^4.1.4"
   }
 }

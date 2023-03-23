@@ -1,24 +1,27 @@
-import 'swiped-events'
-
 const projectAside = document.querySelector('.project-aside')
 
 if (projectAside) {
-    projectAside.addEventListener('touchstart', _ => {
-        document.body.style.overflowY = 'hidden'
-    })
+    let startTime = null
 
-    projectAside.addEventListener('touchend', _ => {
-        setTimeout(() => {
-            document.body.style.overflowY = 'unset'
-        }, 200)
-    })
+    projectAside.addEventListener('touchstart', event => {
+        event.stopPropagation()
+        event.preventDefault()
 
-    projectAside.addEventListener('swiped-up', _ => {
+        startTime = null
         projectAside.classList.add('project-aside--open')
     })
+    document.addEventListener('touchstart', _ => {
+        startTime = Date.now()
+    })
 
-    projectAside.addEventListener('swiped-down', _ => {
-        projectAside.classList.remove('project-aside--open')
+    document.addEventListener('touchend', _ => {
+        const diffTime = Date.now() - startTime
+
+        if (diffTime < 100) {
+            projectAside.classList.remove('project-aside--open')
+        }
+
+        startTime = null
     })
 }
 
