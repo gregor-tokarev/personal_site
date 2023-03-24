@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description" content="Egor Tokarev personal site; Project: Procollab is a digital platform, it will help
+                    you to become part of a team or implement your own idea as a mentor.
+                    Project created to connect students with skills and project.
+                    It already connected 200+ people, so I satisfied with my work">
+    <link rel="stylesheet" href="/style/project.scss">
+    <title>Pomodoro</title>
+    <%- include("../../blocks/utils/preload-manrope.ejs") %>
+    <%- include("../../../.gt_layout_template/linkicon.ejs") %>
+</head>
+<body>
+<main class="project">
+    <div class="project__inner">
+        <a href="/" class="goback body-2 project__goback">
+            <div class="goback__arrow"><%- include("../../images/icons/arrow-left.svg") %></div>
+            Go back
+        </a>
+        <div class="project__body">
+            <article class="project__content project-content">
+                <div class="project-gallery project-content__gallery">
+                    <ul class="project-gallery__slides">
+                        <li class="project-gallery__slide">
+                            <img src="/images/pomodoro/timer.png" alt="user profile">
+                        </li>
+                        <li class="project-gallery__slide">
+                            <img src="/images/pomodoro/login.png" alt="edit profile">
+                        </li>
+                        <li class="project-gallery__slide">
+                            <img src="/images/pomodoro/history.png" alt="registration">
+                        </li>
+                        <li class="project-gallery__slide">
+                            <img src="/images/pomodoro/task-dragging.png" alt="project chat">
+                        </li>
+                        <li class="project-gallery__slide">
+                            <img src="/images/pomodoro/task-edit.png" alt="project profile">
+                        </li>
+                        <li class="project-gallery__slide">
+                            <img src="/images/pomodoro/history.png" alt="edit project">
+                        </li>
+                    </ul>
+                </div>
+                <p>
+                   Pomodoro is simply pomodoro app for better productivity. Project contains functionality
+                    such as task tracking, pomodoro timer itself history of work slots.
+                    Create first of all for my own.
+                </p>
+                <p>
+                    I'm responsible for full cycle of development:
+                    Front-end vue.js^3, UX/UI design, deployment.
+                    Back-end for this project is created with help of <a class="link link--on-light" href="https://firebase.io">firebase</a>,
+                    back-end as a service app.
+                </p>
+                <h3>
+                    Interesting cases in project:
+                </h3>
+                <p>
+                    1. Router using lazy-loading pages<br> <br>
+                    <img src="/images/pomodoro/code/router.png" alt="vue router">
+                </p>
+                <p>
+                    2. Use shopify sortable to sort tasks by drag'n'drop
+                    <img src="/images/pomodoro/code/drag-n-drop.png" alt="vue router">
+                </p>
+                <p>
+                    3. Pretty advanced method used to change order of tasks
+                    <img src="/images/pomodoro/code/changeTaskOrder.png" alt="vue router">
+                </p>
+            </article>
+            <aside class="project__aside project-aside">
+                <div class="project-aside__mobile-bar"></div>
+                <h1 class="project-aside__title">Procollab</h1>
+                <div class="project-aside__table">
+                    <div class="project-aside__tr">
+                        <div class="project-aside__label label-2">Repository:</div>
+                        <a class="project-aside__repo body-3" href="https://github.com/PROCOLLAB-github/procollab">
+                            <div class="project-aside__github-ico"><%- include("../../images/icons/github-30.svg") %></div>
+                            <span>PROCOLLAB-github/procollab</span>
+                        </a>
+                    </div>
+                    <div class="project-aside__tr">
+                        <div class="project-aside__label label-2">Stack:</div>
+                        <ul class="project-aside__skill-list">
+                            <li class="project-aside__skill body-3">angular2+</li>
+                            <li class="project-aside__skill body-3">typescript</li>
+                            <li class="project-aside__skill body-3">jasmine</li>
+                            <li class="project-aside__skill body-3">scss</li>
+                            <li class="project-aside__skill body-3">websockets</li>
+                        </ul>
+                    </div>
+                </div>
+            </aside>
+        </div>
+    </div>
+    <div class="project__modal project-modal">
+        <div class="project-modal__overlay"></div>
+        <div class="project-modal__cross"></div>
+        <img class="project-modal__img" src="/">
+    </div>
+    <div class="project__bottom">
+        <%- include('../../blocks/footer/footer.ejs') %>
+    </div>
+    <%- include('../../blocks/action_button/action_button.ejs')%>
+</main>
+<script src="/js/project-page.js"></script>
+</body>
+</html>
