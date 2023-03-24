@@ -7,8 +7,16 @@
   min-height: 100vh;
   padding-top: 30px;
 
+  .action_button {
+    display: none;
+  }
+
   @include responsive.apply-desktop {
     padding-top: 70px;
+
+    .action_button {
+      display: block;
+    }
   }
 
   &__inner {
