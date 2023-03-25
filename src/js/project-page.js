@@ -32,7 +32,6 @@ if (gallery) {
     const galleryItems = document.querySelectorAll('[data-modal-img]')
 
     galleryItems.forEach(item => {
-        console.log(item)
         const imgUrl = item.getAttribute('src')
         const webpUrl = item.parentNode.querySelector('source').getAttribute('srcset')
 
