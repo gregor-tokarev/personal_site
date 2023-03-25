@@ -29,11 +29,12 @@ const gallery = document.querySelector('.project-gallery')
 const modal = document.querySelector('.project-modal')
 
 if (gallery) {
-    const galleryItems = gallery.querySelectorAll('.project-gallery__slide')
+    const galleryItems = document.querySelectorAll('[data-modal-img]')
 
     galleryItems.forEach(item => {
-        const imgUrl = item.querySelector('img').getAttribute('src')
-        const webpUrl = item.querySelector('source').getAttribute('srcset')
+        console.log(item)
+        const imgUrl = item.getAttribute('src')
+        const webpUrl = item.parentNode.querySelector('source').getAttribute('srcset')
 
         item.addEventListener('click', _ => {
             document.body.style.overflowY = 'hidden'
