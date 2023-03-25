@@ -37,26 +37,31 @@
   &__label {
     margin-bottom: 5px;
     color: var(--gray-300);
+
+    @include typography.label-3;
+
+    @include responsive.apply-desktop {
+      @include typography.label-2;
+    }
   }
 
   &__content {
     position: relative;
-    max-width: 245px;
     min-height: 81px;
     color: var(--accent);
     cursor: pointer;
     transition: transform 0.2s ease-out;
 
-    @include typography.body-3;
+    @include typography.body-2;
 
     &:hover {
       transform: scale(1.1);
     }
 
     @include responsive.apply-desktop {
-      max-width: 360px;
+      max-width: 435px;
 
-      @include typography.body-2;
+      @include typography.title-3;
     }
 
     p {
@@ -85,7 +90,7 @@
 
 .hero-greet {
   &__name {
-    color: var(--gray-400);
+    color: var(--gray-300);
 
     @include typography.title-2;
 
