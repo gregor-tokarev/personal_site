@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description" content="Egor Tokarev personal site; Project: Procollab is a digital platform, it will help
+                    you to become part of a team or implement your own idea as a mentor.
+                    Project created to connect students with skills and project.
+                    It already connected 200+ people, so I satisfied with my work">
+    <link rel="stylesheet" href="/style/project.scss">
+    <title>Procollab</title>
+    <%- include("../../blocks/utils/preload-manrope.ejs") %>
+    <%- include("../../../.gt_layout_template/linkicon.ejs") %>
+</head>
+<body>
+<main class="project">
+    <div class="project__inner">
+        <a href="/" class="goback body-2 project__goback">
+            <div class="goback__arrow"><%- include("../../images/icons/arrow-left.svg") %></div>
+            Go back
+        </a>
+        <div class="project__body">
+            <article class="project__content project-content">
+                <p>
+                    Adviceday is app where you can take advice each day from the greatest philosophers of all time.
+                    User choose categories and gets advices from this categories.
+                    I was responsible for back-end part of project. UI was written in flutter for mobile.
+                </p>
+                <h3>Interesting cases in this project</h3>
+                <p>
+                    1. I used compodoc for generating documentation form jsdocs comments
+                    <img data-modal-img src="/images/adviceday/code/docs.png" alt="docs">
+                    And achieve pretty high level of documentation coverage
+                    <img data-modal-img src="/images/adviceday/code/docs-coverage.png" alt="docs coverage">
+                </p>
+                <p>
+                    2. Working with categories was pretty difficult here
+                    <img data-modal-img src="/images/adviceday/code/buildTree.png" alt="build tree method">
+                    Recursive asynchronous method for building graph of categories
+                    <img data-modal-img src="/images/adviceday/code/brothers.png" alt="brothers method">
+                    Method for getting category brothers
+                    <img data-modal-img src="/images/adviceday/code/getAdvices.png" alt="advices method">
+                    Method for getting advices for selected categories, but if no more unread advices left in selected
+                    categories go for bothers of selected categories
+                </p>
+                <p>
+                    3. I used nestjs-passport strategies for auth
+                    <img data-modal-img src="/images/adviceday/code/authorization.png" alt="guards">
+                    <img data-modal-img src="/images/adviceday/code/access-token-strategy.png" alt="access token strategy">
+                </p>
+                <p>
+                    4. Also used @nestjs/config module for handling configuration
+                    <img data-modal-img src="/images/adviceday/code/env-interface.png" alt="env interface">
+                    <img data-modal-img src="/images/adviceday/code/config-usage.png" alt="config usage">
+                    <img data-modal-img src="/images/adviceday/code/typeormConfig.png" alt="typeorm config">
+                </p>
+            </article>
+            <aside class="project__aside project-aside">
+                <div class="project-aside__mobile-bar"></div>
+                <h1 class="project-aside__title">Adviceday</h1>
+                <div class="project-aside__table">
+                    <div class="project-aside__tr">
+                        <div class="project-aside__label label-2">Repository:</div>
+                        <a class="project-aside__repo body-3" href="https://github.com/adviceday/nestjs-backend">
+                            <div class="project-aside__github-ico"><%- include("../../images/icons/github-30.svg") %></div>
+                            <span>adviceday/nestjs-backend</span>
+                        </a>
+                    </div>
+                    <div class="project-aside__tr">
+                        <div class="project-aside__label label-2">Stack:</div>
+                        <ul class="project-aside__skill-list">
+                            <li class="project-aside__skill body-3">nestjs</li>
+                            <li class="project-aside__skill body-3">postgres</li>
+                            <li class="project-aside__skill body-3">typeorm</li>
+                            <li class="project-aside__skill body-3">typescript</li>
+                        </ul>
+                    </div>
+                </div>
+            </aside>
+        </div>
+    </div>
+    <div class="project__modal project-modal">
+        <div class="project-modal__overlay"></div>
+        <div class="project-modal__cross"></div>
+        <img class="project-modal__img" src="/">
+    </div>
+    <div class="project__bottom">
+        <%- include('../../blocks/footer/footer.ejs') %>
+    </div>
+    <%- include('../../blocks/action_button/action_button.ejs') %>
+</main>
+<script src="/js/project-page.js"></script>
+</body>
+</html>

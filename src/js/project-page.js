@@ -25,27 +25,24 @@ if (projectAside) {
     })
 }
 
-const gallery = document.querySelector('.project-gallery')
 const modal = document.querySelector('.project-modal')
 
-if (gallery) {
-    const galleryItems = document.querySelectorAll('[data-modal-img]')
+const galleryItems = document.querySelectorAll('[data-modal-img]')
 
-    galleryItems.forEach(item => {
-        const imgUrl = item.getAttribute('src')
-        const webpUrl = item.parentNode.querySelector('source').getAttribute('srcset')
+galleryItems.forEach(item => {
+    const imgUrl = item.getAttribute('src')
+    const webpUrl = item.parentNode.querySelector('source').getAttribute('srcset')
 
-        item.addEventListener('click', _ => {
-            document.body.style.overflowY = 'hidden'
+    item.addEventListener('click', _ => {
+        document.body.style.overflowY = 'hidden'
 
-            modal.querySelector('img').setAttribute('src', imgUrl)
-            modal.querySelector('source').setAttribute('srcset', webpUrl)
-            modal.classList.add('project-modal--open')
-        })
+        modal.querySelector('img').setAttribute('src', imgUrl)
+        modal.querySelector('source').setAttribute('srcset', webpUrl)
+        modal.classList.add('project-modal--open')
     })
+})
 
-    modal.querySelector('.project-modal__overlay').addEventListener('click', _ => {
-        document.body.style.overflowY = 'unset'
-        modal.classList.remove('project-modal--open')
-    })
-}
+modal.querySelector('.project-modal__overlay').addEventListener('click', _ => {
+    document.body.style.overflowY = 'unset'
+    modal.classList.remove('project-modal--open')
+})
