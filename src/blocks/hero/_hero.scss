@@ -67,6 +67,11 @@
     p {
       position: absolute;
       opacity: 0;
+      transition: opacity 1s;
+
+      &:first-child {
+        opacity: 1;
+      }
     }
   }
 }
