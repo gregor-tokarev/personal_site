@@ -70,6 +70,8 @@ $project-screen-spacer: 30px;
   }
 
   &__title {
+    display: block;
+    width: fit-content;
     margin-bottom: 5px;
     color: var(--white);
 
@@ -91,9 +93,15 @@ $project-screen-spacer: 30px;
   }
 
   &__link {
+    display: block;
+    width: fit-content;
+    margin-top: 15px;
+
     @include typography.body-3;
 
     @include responsive.apply-desktop {
+      margin-top: 25px;
+
       @include typography.label-2;
     }
   }
