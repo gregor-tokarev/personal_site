@@ -1,0 +1,21 @@
+@use "src/style/responsive";
+
+.project--forth {
+  .project__wrapper {
+    background-color: #0d1117;
+  }
+
+  .project__img {
+    top: 30px;
+    right: 20px;
+    left: 20px;
+    width: calc(100% - 40px);
+
+    @include responsive.apply-desktop {
+      top: 60px;
+      right: 40px;
+      left: unset;
+      width: 1000px;
+    }
+  }
+}
