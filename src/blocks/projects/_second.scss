@@ -1,15 +1,29 @@
 @use "src/style/responsive";
 
 .project--second {
-  background-color: var(--gray-400);
+  background-color: #13171d;
 
   .project__img {
-    top: 105px;
-    right: 0;
-    left: 0;
+    top: 30px;
+    right: 20px;
+    left: 20px;
+    width: calc(100% - 40px);
 
     @include responsive.apply-desktop {
       top: 165px;
     }
+  }
+
+  .project__text,
+  .project__title,
+  .project__link {
+    @include responsive.apply-desktop {
+      padding: 0 4px;
+      background: #000;
+    }
+  }
+
+  .project__text {
+    margin-right: 20px;
   }
 }
