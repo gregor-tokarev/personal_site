@@ -29,7 +29,7 @@ $project-screen-spacer: 30px;
 
   @include typography.display-1;
 
-  @for $i from 1 through 4 {
+  @for $i from 1 through 10 {
     &:nth-child(#{$i}) {
       z-index: $i;
     }
@@ -88,6 +88,8 @@ $project-screen-spacer: 30px;
     @include typography.body-3;
 
     @include responsive.apply-desktop {
+      max-width: 600px;
+
       @include typography.body-2;
     }
   }

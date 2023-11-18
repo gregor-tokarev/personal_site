@@ -1,0 +1,24 @@
+@use "src/style/responsive";
+
+.project--fifth {
+  .project__wrapper {
+    background-color: #000;
+  }
+
+  .project__img {
+    width: 100vw;
+  }
+
+  .project__text,
+  .project__title,
+  .project__link {
+    @include responsive.apply-desktop {
+      padding: 0 4px;
+      background: #000;
+    }
+  }
+
+  .project__text {
+    margin-right: 20px;
+  }
+}
