@@ -2,69 +2,134 @@
 @use "src/style/responsive";
 
 .footer {
-  padding: 21px 0 100px;
+  padding: 0 0 100px;
   margin-top: 180px;
   background-color: var(--dark);
 
   @include responsive.apply-desktop {
-    padding: 31px 0;
+    padding: 0;
     margin-top: 260px;
+  }
+
+  &__inner {
+    @include responsive.apply-desktop {
+      display: flex;
+      align-items: flex-start;
+      max-width: 1180px;
+      margin: 0 auto;
+    }
+  }
+
+  &__nav {
+    @include responsive.apply-desktop {
+      flex-basis: 40%;
+      align-self: stretch;
+      order: 1;
+      margin-left: auto;
+      border-right: 1px solid white;
+      border-left: 1px solid white;
+    }
   }
 
   &__nav-list {
     display: flex;
     flex-direction: column;
-    align-items: center;
     padding: 0;
     list-style-type: none;
 
     @include responsive.apply-desktop {
-      flex-direction: row;
       justify-content: center;
     }
   }
 
   &__item {
     display: block;
+    font-family: Manrope, sans-serif;
+    font-size: 32px;
+    font-weight: 400;
+    color: white;
+    text-transform: uppercase;
+    border-bottom: 1px solid white;
+    transition: color 0.2s;
 
-    &:not(:last-child) {
-      margin-bottom: 20px;
+    &:hover {
+      color: var(--accent);
+    }
 
-      @include responsive.apply-desktop {
-        margin-right: 70px;
-        margin-bottom: 0;
+    @include responsive.apply-desktop {
+      &:last-child {
+        border-bottom: none;
       }
     }
   }
 
   &__link {
     display: flex;
+    gap: 12px;
     align-items: center;
-    color: var(--white);
-    transition: color 0.2s;
+    padding: 32px responsive.$mobile-x-space;
+  }
 
-    &:hover {
-      color: var(--gray-200);
+  &__other {
+    @include responsive.apply-desktop {
+      flex-grow: 1;
+      padding-right: 5%;
     }
+  }
 
-    svg {
-      width: 40px;
-      height: 40px;
+  &__message {
+    padding: 0 responsive.$mobile-x-space;
+    margin-top: 35px;
+    font-family: Manrope, sans-serif;
+    font-size: 48px;
+    color: white;
+    text-transform: uppercase;
 
-      @include responsive.apply-desktop {
-        width: 50px;
-        height: 50px;
-      }
+    @include responsive.apply-desktop {
+      margin-top: 50px;
+      font-size: 96px;
     }
 
     span {
-      margin-left: 10px;
+      display: block;
 
-      @include typography.body-2;
-
-      @include responsive.apply-desktop {
-        @include typography.title-3;
+      &:nth-child(2) {
+        text-align: right;
       }
     }
+  }
+
+  $circle-size: 145px;
+
+  &__circle {
+    position: relative;
+    width: $circle-size;
+    height: $circle-size;
+
+    @include responsive.apply-desktop {
+      transform: translateY(-100%);
+    }
+  }
+
+  &__letters {
+    color: white;
+    animation: rotation linear 10s infinite;
+  }
+
+  &__tricangle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
   }
 }
