@@ -201,20 +201,20 @@ function imagesProduction() { // run not on linux
         .pipe(changed(path.build.img, { extension: '.{jpg|png|jpeg|gif|svg}' }))
         .pipe(webp())
         .pipe(dest(path.build.img))
-        .pipe(src(path.src.img))
-        .pipe(imagemin({
-            pngquant: true,
-            optipng: false,
-            zopflipng: true,
-            jpegRecompress: false,
-            mozjpeg: true,
-            gifsicle: true,
-            svgo: true,
-            concurrent: 10,
-            quiet: true // defaults to false
-        }))
-        .pipe(dest(path.build.img))
-        .pipe(browserSync.stream());
+    // .pipe(src(path.src.img))
+    // .pipe(imagemin({
+    //     pngquant: true,
+    //     optipng: false,
+    //     zopflipng: true,
+    //     jpegRecompress: false,
+    //     mozjpeg: true,
+    //     gifsicle: true,
+    //     svgo: true,
+    //     concurrent: 10,
+    //     quiet: true // defaults to false
+    // }))
+    // .pipe(dest(path.build.img))
+    // .pipe(browserSync.stream());
 }
 
 function fontsDevelopment() {
