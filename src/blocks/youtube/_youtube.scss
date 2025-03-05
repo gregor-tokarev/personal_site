@@ -1,0 +1,68 @@
+@use "src/style/typography";
+@use "src/style/responsive";
+
+.youtube {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 24px 12px;
+  margin: 200px 15px 100px;
+  background-color: #f00;
+
+  @include responsive.apply-desktop {
+    max-width: 1180px;
+    padding: 30px 24px;
+    margin: 200px auto 100px;
+  }
+
+  &__title {
+    color: var(--white);
+
+    @include typography.title-3;
+
+    @include responsive.apply-desktop {
+      @include typography.display-1;
+    }
+  }
+
+  &__videos {
+    display: flex;
+    gap: 16px;
+    overflow: auto;
+
+    > * {
+      flex-shrink: 0;
+      width: 315px;
+      height: 175px;
+    }
+  }
+}
+
+.profile {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  color: var(--white);
+
+  &__img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+  }
+
+  &__name {
+    @include typography.body-2;
+
+    @include responsive.apply-desktop {
+      @include typography.title-3;
+    }
+  }
+
+  &__stats {
+    @include typography.body-3;
+
+    @include responsive.apply-desktop {
+      @include typography.body-2;
+    }
+  }
+}
