@@ -19,7 +19,7 @@ const scriptLint = require('gulp-eslint');
 const esbuild = require('gulp-esbuild');
 
 // images
-const imagemin = require('gulp-image');
+// const imagemin = require('gulp-image');
 const webp = require('gulp-webp');
 const favicons = require('gulp-favicons');
 
@@ -52,7 +52,8 @@ const path = {
         img: `${projectFolder}/images/`,
         icons: `${projectFolder}/images/icons/`,
         favicons: `${projectFolder}/images/favicons/`,
-        fonts: `${projectFolder}/fonts/`
+        fonts: `${projectFolder}/fonts/`,
+        assets: `${projectFolder}/assets/`
     },
     src: {
         html: [`${sourceFolder}/pages/**/*.ejs`, `${sourceFolder}/pages/index.ejs`],
@@ -61,7 +62,8 @@ const path = {
         img: `${sourceFolder}/images/**/*.{jpeg,png,gif,svg,webp}`,
         icons: `${sourceFolder}/images/icons/*.svg`,
         favicons: `${sourceFolder}/favicon.png`,
-        fonts: `${sourceFolder}/fonts/**/*.*`
+        fonts: `${sourceFolder}/fonts/**/*.*`,
+        assets: `${sourceFolder}/assets/**/*.*`
     },
     watch: {
         html: `${sourceFolder}/pages/**/*.ejs`,
@@ -227,6 +229,16 @@ function fontsProduction() {
         .pipe(dest(path.build.fonts));
 }
 
+function assetsDevelopment() {
+    return src(path.src.assets)
+        .pipe(dest(path.build.assets));
+}
+
+function assetsProduction() {
+    return src(path.src.assets)
+        .pipe(dest(path.build.assets));
+}
+
 function faviconsDevelopment() {
     return src(path.src.favicons, { allowEmpty: true })
         .pipe(favicons({
@@ -271,6 +283,7 @@ if (!production) {
         scriptDevelopment, scriptLinter,
         imagesDevelopment,
         fontsDevelopment,
+        assetsDevelopment,
         faviconsDevelopment
     );
     const watcher = parallel(watchDevelopment, browserSyncDevelopment, build);
@@ -286,6 +299,7 @@ if (!production) {
         scriptProduction,
         imagesProduction,
         fontsProduction,
+        assetsProduction,
         faviconsProduction
     );
 
