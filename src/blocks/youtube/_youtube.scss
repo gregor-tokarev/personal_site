@@ -34,6 +34,11 @@
       flex-shrink: 0;
       width: 315px;
       height: 175px;
+
+      @include responsive.apply-desktop {
+        width: 560px;
+        height: 315px;
+      }
     }
   }
 }
