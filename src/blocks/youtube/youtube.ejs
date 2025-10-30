@@ -1,28 +1,58 @@
 <div class="youtube">
-    <h2 class="youtube__title">Я веду свой youtube канал</h2>
-    <a href="https://youtube.com/@gregortokarev" target="_blank" class="profile">
-        <img src="/images/youtube/avatar.jpg" alt="" class="profile__img"/>
-        <div class="profile__info">
-            <div class="profile__name">@gregortokarev</div>
-            <div class="profile__stats">3.8к подписчиков • 200к просмотров</div>
+    <div class="youtube__inner">
+        <div class="youtube__header">
+            <span class="youtube__eyebrow">Видео и прямые эфиры</span>
+            <h2 class="youtube__title">Я веду свой YouTube канал</h2>
+            <p class="youtube__description">
+                Рассказываю про продуктовую разработку, делюсь практическими кейсами и помогаю начинающим разработчикам
+                быстрее прокачивать навыки.
+            </p>
         </div>
-    </a>
-    <div class="youtube__videos">
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/qkLaSCXw9QU?si=YCpk901Tr_aYuu5O"
-                title="YouTube video player" frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/mEKjFzGT8wc?si=ha92xiln0S-vjYsL"
-                title="YouTube video player" frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/HfEPxM4J41Y?si=YPsal551se5er3MR"
-                title="YouTube video player" frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/YXWootrynKg?si=6_wE-KcNm6KR8Lef"
-                title="YouTube video player" frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        <div class="youtube__meta">
+            <a href="https://youtube.com/@gregortokarev" target="_blank" class="youtube__profile">
+                <img src="/images/youtube/avatar.jpg" alt="Аватар канала @gregortokarev" class="youtube__profile-img"/>
+                <div class="youtube__profile-info">
+                    <span class="youtube__profile-name">@gregortokarev</span>
+                    <span class="youtube__profile-hint">Перейти на канал</span>
+                </div>
+                <span aria-hidden="true" class="youtube__profile-arrow">→</span>
+            </a>
+            <div class="youtube__stats">
+                <div class="youtube__stat">
+                    <span class="youtube__stat-value">3.8K</span>
+                    <span class="youtube__stat-label">подписчиков</span>
+                </div>
+                <div class="youtube__stat">
+                    <span class="youtube__stat-value">200K+</span>
+                    <span class="youtube__stat-label">просмотров</span>
+                </div>
+            </div>
+        </div>
+        <div class="youtube__videos">
+            <div class="youtube__video">
+                <iframe src="https://www.youtube.com/embed/qkLaSCXw9QU?si=YCpk901Tr_aYuu5O"
+                        title="Как прокачать разработку на pet-проектах" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe>
+            </div>
+            <div class="youtube__video">
+                <iframe src="https://www.youtube.com/embed/mEKjFzGT8wc?si=ha92xiln0S-vjYsL"
+                        title="Разбор pet-проекта ProCollab" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe>
+            </div>
+            <div class="youtube__video">
+                <iframe src="https://www.youtube.com/embed/HfEPxM4J41Y?si=YPsal551se5er3MR"
+                        title="Собираю Pomodoro App" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe>
+            </div>
+            <div class="youtube__video">
+                <iframe src="https://www.youtube.com/embed/YXWootrynKg?si=6_wE-KcNm6KR8Lef"
+                        title="Обзор лучших инструментов для разработчиков" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe>
+            </div>
+        </div>
     </div>
 </div>
